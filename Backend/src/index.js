@@ -22,6 +22,9 @@ dotenv.config({
 import applicationRouter from './routes.js'
 
 app.use("/api/v1",applicationRouter)
+app.get('/',(req,res)=>{
+    res.send('Hello World')
+})
 
 connectDb().then(()=>{
 
