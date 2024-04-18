@@ -15,7 +15,7 @@ const Form: FunctionComponent = () => {
   const onSubmit = async (data: any,e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault()
     console.log(data)
-   const Response = await axios.post("http://localhost:3000/api/v1/application",data)
+   const Response = await axios.post("https://assignment-at-kridaverse.onrender.com/api/v1/application",data)
    localStorage.setItem("Key",Response.data.application.slNumber)
    
     navigate(`/downloadpdf`)

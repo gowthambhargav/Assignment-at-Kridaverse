@@ -6,12 +6,12 @@ function Download() {
         const key = localStorage.getItem('Key')
 
        try {
-       const response = await axios.get(`http://localhost:3000/api/v1/${key}`,{
+       const response = await axios.get(`https://assignment-at-kridaverse.onrender.com/api/v1/${key}`,{
         responseType: 'blob'
        })
        console.log(response);
          const url = window.URL.createObjectURL(new Blob([response.data]));
-            window.open(`http://localhost:3000/api/v1/${key}`);
+            window.open(`https://assignment-at-kridaverse.onrender.com/api/v1/${key}`);
 
        } catch (error) {
         console.log(error);
