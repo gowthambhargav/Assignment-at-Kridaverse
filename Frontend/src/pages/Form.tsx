@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 const Form: FunctionComponent = () => {
   const navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = async (data: any,e: React.FormEvent<HTMLFormElement>) =>{
+  const onSubmit = async (data: any,e:any) =>{
     e.preventDefault()
     console.log(data)
    const Response = await axios.post("https://assignment-at-kridaverse.onrender.com/api/v1/application",data)
@@ -25,7 +25,7 @@ const Form: FunctionComponent = () => {
       <main className="w-[1689px] flex flex-row items-start justify-end py-0 px-[43px] box-border max-w-full lg:pl-[21px] lg:pr-[21px] lg:box-border">
         <section className="h-auto flex-1 flex flex-row items-end justify-start pt-[49px] px-0 pb-0 box-border max-w-full text-left text-base text-darkslategray-100 font-poppins lg:h-auto lg:pt-8 lg:box-border mq750:pt-5 mq750:box-border mq1050:pt-[21px] mq1050:box-border">
           <Title />
-        <form  className="flex-1 flex flex-col items-start justify-start pt-0 px-0 pb-[133px] box-border min-h-[1827px] max-w-[calc(100%_-_205px)] shrink-0 lg:pb-[86px] lg:box-border mq1050:pb-14 mq1050:box-border mq1050:max-w-full mq450:pb-9 mq450:box-border">
+        <form onSubmit={handleSubmit(onSubmit)}  className="flex-1 flex flex-col items-start justify-start pt-0 px-0 pb-[133px] box-border min-h-[1827px] max-w-[calc(100%_-_205px)] shrink-0 lg:pb-[86px] lg:box-border mq1050:pb-14 mq1050:box-border mq1050:max-w-full mq450:pb-9 mq450:box-border">
             <div className="self-stretch flex flex-col items-start justify-start gap-[33.3px] max-w-full mq750:gap-[17px]">
               <div className="self-stretch flex flex-row items-start justify-end max-w-full text-5xl text-black1">
                 <div className="w-[1329px] flex flex-row items-start justify-between max-w-full gap-[20px] lg:flex-wrap">
