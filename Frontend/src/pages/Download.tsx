@@ -20,10 +20,11 @@ function Download() {
         };
     
   return (
-    <>
-    
+    <div className='flex justify-center items-center'>
+    <p>Please wait some time and then download.</p>
+<p>If you are not redirected or the PDF does not open, click on Download again.</p>
     <button onClick={HandelCkick} className='bg-blue-500 p-2 rounded-sm'>Download</button>
-    </>
+    </div>
   )
 }
 
